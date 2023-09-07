@@ -1,389 +1,485 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
-  <link rel="stylesheet" href="/style.css">
-  <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Vivek</title>
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3648b81d27.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #EEEADF;
+            font-family: 'Inter';
+        }
+        
+        @font-face {
+            font-family: 'ASR';
+            font-style: normal;
+            src: url('https://files.cargocollective.com/c1245017/Regular.woff') format('woff');
+        }
+        
+        .main-content {
+            padding-left: 5px;
+            padding-top: 5px;
+        }
+        
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+            margin-bottom: 5px;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background-color: black;
+            padding: 0px;
+        }
+        
+        .name {
+            color: #000;
+            font-size: 65px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -0.26px;
+            margin: 0px
+        }
+        
+        .position {
+            color: #000;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -0.06px;
+        }
+        
+        .title {
+            margin: 0px;
+            color: #000;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -0.08px;
+        }
+        
+        .education {
+            margin-bottom: 150px;
+        }
+        
+        .outer-border {
+            height: 89vh;
+            text-align: justify;
+            color: black;
+            padding-bottom: -100px;
+        }
+        
+        .outer-border {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .inner-border {
+            width: 450px;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+        
+        .inner-border::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .fa {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        .fa-brands {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        .container {
+            display: flex;
+        }
+        
+        .container.space-around {
+            justify-content: space-around;
+        }
+        
+        .container.space-between {
+            justify-content: space-between;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        
+        .columns-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .column {
+            width: 48%;
+            margin-top: -15px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        
+        p {
+            font-size: 15px;
+        }
+        
+        .skill_level {
+            margin-left: 20px;
+            margin-top: -10px;
+            margin-bottom: -10px;
+            padding: 0px;
+        }
+        
+        .emp {
+            height: 7px;
+            rx: 3.5;
+        }
+        
+        .float-child-element-e {
+            float: left;
+            width: 450px;
+            height: inherit;
+        }
+        
+        .float-child-element {
+            padding-left: 20px;
+            float: none;
+            overflow: hidden;
+            height: 97vh;
+        }
+        
+        .left {
+            text-align: left;
+        }
+        
+        .right {
+            float: right;
+        }
+        
+        .test {
+            position: relative;
+            overflow: hidden;
+            display: block;
+            height: 97vh;
+        }
+        
+        .exp {
+            height: 1830px;
+        }
+        
+        .sub_div {
+            position: absolute;
+            bottom: 0px;
+            font-size: 12px;
+            font-family: 'ASR', Helvetica, sans-serif, "Helvetica Roman", Icons;
+        }
+        
+        .for-fun {
+            margin-top: 0px
+        }
+        
+        .image_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .image_container img {
+            max-width: 75%;
+            max-height: 75%;
+            margin-top: -85px;
+        }
+        
+        .resume {
+            font-size: 15px;
+            font-weight: 500;
+            margin: 3px;
+            font-family: 'ASR', Helvetica, sans-serif, "Helvetica Roman", Icons;
+        }
+        
+        @media screen and (max-width: 700px) {
+            div.float-child-element {
+                display: none;
+            }
+            div.float-child-element-e {
+                width: 100%
+            }
+            div.inner-border {
+                width: 100%
+            }
+            div.exp {
+                height: 2240px;
+            }
+        }
+    </style>
 </head>
 
-<style>
-html, body {
-  padding: 0;
-  margin: 0;
-  --extra-space: 60px;
-}
-  
-article {
-  overflow: scroll;
+<body>
+    <div class="test">
 
-  scroll-snap-type: y mandatory;
-  /* Reserve space for header and additional space so above page are visible a bit*/ 
-  scroll-padding-top:  calc(var(--bar-height) + var(--extra-space));
-
-  position: absolute;
-
-  top:0;
-  bottom:0;
-  left: 0;
-  right: 0;
-  padding: var(--bar-height) 0 0 0;
-  
-  /* Enable Safari touch scrolling physics which is needed for scroll snap */
-  -webkit-overflow-scrolling: touch; 
-}
-
-section {
-  scroll-snap-align: start; /* snap align start */
-  scroll-snap-stop: always;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  
-  font-size: 36px;
-}
-
-section.large {
-   height: 100vh;
-}
-section.medium {
-   height: 60vh;
-}
-section.small {
-   height: 30vh;
-}
-
-article > section:nth-of-type(1) {
-  background-color: rgb(181, 198, 194);
-}
-article > section:nth-of-type(2) {
-  background-color: rgb(181, 198, 194);
-}
-article >  section:nth-of-type(3) {
-  background-color: rgb(181, 198, 194);
-}
-article >  section:nth-of-type(4) {
-  background-color: rgb(181, 198, 194);
-}
-article > section:nth-of-type(5) {
-  background-color: rgb(181, 198, 194);
-}
-  
-  
-header {
-  position: fixed;
- 
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
-  
-  height: var(--bar-height);
-  width: 100%;
-  top: 0;
-  padding: 0;
-
-  background: rgb(181, 198, 194);
-  color: #212121;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-  
-
-  
-body {
-  background: rgb(181, 198, 194);
-  font-family: "Inconsolata", monospace; 
-}
-
-.contents {
-  max-width: 1000px;
-  margin: auto;
-  background: rgb(181, 198, 194);
-  padding: 10px;
-}
+        <div class="float-child-element-e">
+            <div class="container space-between">
+                <div>
+                    <i style="font-size:20px; color:#101010" class="fa" aria-hidden="true"><a href="mailto: revanka4@msu.edu" style="color:#101010; text-decoration: none"></a></i>
+                </div>
+                <div>
+                    <i style="font-size:20px; color:#101010" class="fa-brands"><a style="color:#101010; text-decoration: none" href="https://www.linkedin.com/in/vivekrevankar/" target="_blank"></a></i>
+                </div>
+                <div>
+                    <i style="font-size:20px; color:#101010" class="fa-brands"><a style="color:#101010; text-decoration: none" href="https://github.com/viv3ko" target="_blank"></a></i>
+                </div>
+                <div>
+                    <i style="font-size:20px; color:#101010" class="fa-brands"><a style="color:#101010; text-decoration: none" href="https://www.instagram.com/viv3k.o/" target="_blank"></a></i>
+                </div>
+                <div>
+                    <i style="font-size:20px; color:#101010" class="fa" aria-hidden="true">
+                    <a style="color:#101010; text-decoration: none" href="https://drive.google.com/file/d/1hWqKHEfgnL4iybGbeyFyn8iWk8oiXKof/view" target="_blank"></a></i>
+                </div>
+            </div>
 
 
-.font {
-  color: #101010;
-  font-family: "Inconsolata", monospace; 
-  font-size: 36px;
-}
-  
-.font1 {
-  color: #101010;
-  font-family: "Inconsolata", monospace; 
-  font-size: 22px;
-}
+            <hr>
+            <div class="bio">
+                <h2 class="title">
+                    Computer Science Student
+                </h2>
+                <h1 class="name">
+                    Vivek
+                </h1>
+            </div>
 
-.font2 {
-  color: #101010;
-  font-family: "Inconsolata", monospace; 
-  font-size: 17px;
-}
+            <hr>
+            <div class="outer-border">
+                <div class="inner-border">
+                    <div class="education">
+                        <div class="clearfix">
+                            <span class="left">Michigan State University</span>
+                            <span class="right">E. Lansing, MI</span>
+                        </div>
+                        <div class="clearfix">
+                            <span class="left">B.S. in Computer Science</span>
+                            <span class="right">GPA: 3.62</span>
+                        </div>
+                        <div class="clearfix">
+                            <span class="left">Expected Graduation:</span>
+                            <span class="right">May 2025</span>
+                        </div>
+                    </div>
 
-.font3 {
-  color: #101010;
-  font-family: "Inconsolata", monospace; 
-  font-size: 20px;
-}
+
+                    <hr>
+                    <div>
+                        <h2 class="section-title">
+                            Skills:
+                        </h2>
+
+                        <div class="columns-container">
+                            <div class="column">
+                                <p>Python
+                                    <div class="skill_level">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="7" viewBox="0 0 150 7" fill="none" margin="0" padding="0">
+                                            <rect class="emp" fill="rgba(0, 0, 0, 0.5)" width="150px"/>
+                                            <rect class="emp" fill="rgba(0, 0, 0, 1)" width="120px"/>
+                                            </svg>
+                                    </div>
+                                </p>
+                                <p>HTML
+                                    <div class="skill_level">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="7" viewBox="0 0 150 7" fill="none">
+                                            <rect class="emp" fill="rgba(0, 0, 0, 0.5)" width="150px"/>
+                                            <rect class="emp" fill="rgba(0, 0, 0, 1)" width="90px"/>
+                                            </svg>
+                                    </div>
+                                </p>
+                                <p>Java
+                                    <div class="skill_level">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="7" viewBox="0 0 150 7" fill="none">
+                                            <rect class="emp" fill="rgba(0, 0, 0, 0.5)" width="150px"/>
+                                            <rect class="emp" fill="rgba(0, 0, 0, 1)" width="60px"/>
+                                            </svg>
+                                    </div>
+                                </p>
+                                <p>JavaScript
+                                    <div class="skill_level">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="7" viewBox="0 0 150 7" fill="none">
+                                            <rect class="emp" fill="rgba(0, 0, 0, 0.5)" width="150px"/>
+                                            <rect class="emp" fill="rgba(0, 0, 0, 1)" width="30px"/>
+                                            </svg>
+                                    </div>
+                                </p>
+                                <p>Excel
+                                    <div class="skill_level">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="7" viewBox="0 0 150 7" fill="none">
+                                            <rect class="emp" fill="rgba(0, 0, 0, 0.5)" width="150px"/>
+                                            <rect class="emp" fill="rgba(0, 0, 0, 1)" width="120px"/>
+                                            </svg>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="column">
+                                <p>C++
+                                    <div class="skill_level">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="7" viewBox="0 0 150 7" fill="none" margin="0" padding="0">
+                                            <rect class="emp" fill="rgba(0, 0, 0, 0.5)" width="150px"/>
+                                            <rect class="emp" fill="rgba(0, 0, 0, 1)" width="60px"/>
+                                            </svg>
+                                    </div>
+                                </p>
+                                <p>CSS
+                                    <div class="skill_level">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="7" viewBox="0 0 150 7" fill="none" margin="0" padding="0">
+                                            <rect class="emp" fill="rgba(0, 0, 0, 0.5)" width="150px"/>
+                                            <rect class="emp" fill="rgba(0, 0, 0, 1)" width="90px"/>
+                                            </svg>
+                                    </div>
+                                </p>
+                                <p>SQL
+                                    <div class="skill_level">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="7" viewBox="0 0 150 7" fill="none" margin="0" padding="0">
+                                            <rect class="emp" fill="rgba(0, 0, 0, 0.5)" width="150px"/>
+                                            <rect class="emp" fill="rgba(0, 0, 0, 1)" width="60px"/>
+                                            </svg>
+                                    </div>
+                                </p>
+                                <p>Figma
+                                    <div class="skill_level">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="7" viewBox="0 0 150 7" fill="none" margin="0" padding="0">
+                                            <rect class="emp" fill="rgba(0, 0, 0, 0.5)" width="150px"/>
+                                            <rect class="emp" fill="rgba(0, 0, 0, 1)" width="60px"/>
+                                            </svg>
+                                    </div>
+                                </p>
+                                <p>Word
+                                    <div class="skill_level">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="7" viewBox="0 0 150 7" fill="none" margin="0" padding="0">
+                                            <rect class="emp" fill="rgba(0, 0, 0, 0.5)" width="150px"/>
+                                            <rect class="emp" fill="rgba(0, 0, 0, 1)" width="120px"/>
+                                            </svg>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="exp">
+                        <h2 class="section-title">
+                            Experience:
+                        </h2>
+
+                        <h3 class="position">
+                            Student Web Developer | MSU University Advancement
+                        </h3>
+                        <ul>
+                            <li>Conducted research and development to enhance the web services of MSU UA.</li>
+                            <li>Performed in-depth research on event management software solutions, analyzing their features and capabilities to meet project requirements.</li>
+                            <li>Methodically evaluated multiple APIs through testing and assessment, leading to the selection of an optimal solution that enhanced our web services.</li>
+                        </ul>
 
 
-.blink {
-        animation: blinker 1s linear infinite;
-        color: #101010;
-        font-size: 30px;
-        font-weight: bold;
-        font-family: "Inconsolata", monospace; 
-      }
-      @keyframes blinker {
-        50% {
-          opacity: 0;
-        }
-      }
-    
-.row{clear:both}
+                        <h3 class="position">
+                            Carbon Dioxide Emissions Calculator
+                        </h3>
+                        <ul>
+                            <li>Using Python and its libraries (NumPy, matplotlib, pandas, and seaborn), calculated projections of CO2 emissions for certain countries in the year 2050.
+                            </li>
+                            <li>
+                                Employing historical emissions data, computed CO2 emissions for 3 high and 3 low emitting countries, using the trends to provide comprehensive projections of future emissions.
+                            </li>
+                        </ul>
 
-.column{
-    width: 500px;
-    float: left;
-}
+                        <h3 class="position">
+                            SpartaHack 8 | Hackathon | Michigan State University
+                        </h3>
+                        <ul>
+                            <li>Leveraging expertise in JavaScript, Firebase, and Google authentication, seamlessly integrated the backend with our Solutions platform website.</li>
+                            <li>
+                                This integration enabled us to securely store users' inputs and display them on the front end, providing an enhanced user experience and facilitating streamlined data management.
+                            </li>
+                        </ul>
 
-.tab {
-  overflow: hidden;
-  background-color: rgb(181, 198, 194);
-}
+                        <h3 class="position">
+                            CSV Projects | CSE 231 | Michigan State University
+                        </h3>
+                        <ul>
+                            <li>Developed several data analysis tools, such as a stock market analyzer, network analyzer, movie ratings analyzer, and the card game of Klondike.</li>
+                            <li>
+                                Possessed expertise in working with csv files in python to analyze data using various data structures, including lists, tuples, dictionaries, and sets, demonstrating my ability to extract valuable insights from data and drive informed decision-making.
+                            </li>
+                            <li>
+                                Learnt data manipulation techniques to solve real-world problems that occur in engineering, mathematics, and science.
+                            </li>
+                        </ul>
 
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  border-radius: 10px;
-  outline: none;
-  cursor: pointer;
-  padding-right: 14px 16px;
-  margin-right: 40px;
-  transition: 0.3s;
-  font-size: 19px;
-  color: #101010;
-  font-family: "Inconsolata", monospace; 
-}
+                        <h3 class="position">
+                            Website Design | Legends of Time | Rochester, MI
+                        </h3>
+                        <ul>
+                            <li>Created a visually stunning and user-friendly website for Legends of Time, a local small business in Downtown Rochester.
+                            </li>
+                            <li>
+                                Leveraging expertise in HTML, CSS, and JavaScript, designed the website from scratch to embody the unique Native-American atmosphere of the business.
+                            </li>
+                            <li>
+                                Ensured optimal user experience by making the website responsive across different device formats and added interactive features, such as contact buttons, to enhance customer engagement.
+                            </li>
+                        </ul>
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: white;
-  border-radius: 10px;
-}
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: white;
-}
+                        <h3 class="position">
+                            Swappa Fee Calculator
+                        </h3>
+                        <ul>
+                            <li>Developed a user-friendly and intuitive interface for Swappa.com, utilizing HTML and CSS.
+                            </li>
+                            <li>
+                                The interface allows users to input an asking price for their potential device sale, which then calculates the listing price, buyer and seller fees, PayPal deduction, and overall profit from the sale.
+                            </li>
+                        </ul>
 
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  border-top: none;
-  background-color: rgb(181, 198, 194);
-}
-</style>
 
-<script src="https://kit.fontawesome.com/b6cb1903b6.js" crossorigin="anonymous"></script>
+                        <h3 class="position">
+                            Water Filtration Design | EGR 100 | Michigan State University
+                        </h3>
+                        <ul>
+                            <li>Collaborated with a team of 4 to evaluate the efficacy of various activated carbon types for integration into a water filtration system.</li>
+                            <li>Applied Excel to perform in-depth efficiency calculations based on the unique properties of each activated carbon type, which were then used to create informative comparison graphs. Conducted research to explore potential alternatives
+                                to activated carbon with the goal of enhancing system efficiency.</li>
+                            <li>
+                                Concluded Zeolite 13X was a better alternative, boasting a higher density, enabling greater packing efficiency within the filter. Additionally, its cost-effective, at only 27% the cost per pound of activated carbon.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="float-child-element">
+            <h3 class="resume"> ←&nbsp;&nbsp;RESUME <span style="float:right;">
+                VIVEK REVANKAR
+            </span></h3>
+            <hr>
+            <div class="image_container">
+                <img src="https://onedrive.live.com/embed?resid=D767C7EC344E4BF2%2127842&authkey=%21AErICZ0X7fPF7l0&width=929&height=619" alt="The photograph" class=".image_container img">
+            </div>
+            <marquee class="sub_div" behavior="scroll" direction="left" speed="5"> |&nbsp;&nbsp;LEFT ← portfolio&nbsp;&nbsp;|&nbsp;&nbsp;RIGHT → a photograph I took&nbsp;&nbsp;|&nbsp;&nbsp;revanka4@msu.edu&nbsp;&nbsp;|&nbsp;&nbsp;site updated: 09/09/2023&nbsp;&nbsp;|&nbsp;&nbsp;@ 2023 vivek&nbsp;&nbsp;|</marquee>
+        </div>
 
-<article>
-
-  <section class="large"> 
-    <div class="contents">
-      <div class="test">
-        <h1 class="font">Hi, Vivek here <span class="blink">|</span></i></h1>
-        <h3 class="font1">I am honors student majoring in Computer Science and minoring in Data Science. I have experience in Python Programming especially with data manipulation and working with CSV files. I am eager to apply my skills to a career in data analysis and data science. I am currently seeking a challenging role in a fast-paced environment to continue growth and make an impact.</h3>
-      </div>
     </div>
-  </section>
-
-
-
-
-
-  <section class="large">
-    <div class="contents">
-      <div class="test">
-        <h1 class="font">Education <span class="blink">|</span></h1>
-        <h3 class="font1">Michigan State University | E. Lansing | MI<ul>
-  <li class="font3">Bachelor of Science in Computer Science</li>
-  <li class="font3">Minor in Data Science</li>
-  <li class="font3">GPA: 3.69</li>
-  <li class="font3">Expected Graduation: May, 2025</li>
-</ul>
-</h3>
-      </div>
     </div>
-  </section>
-
-
-
-
-  <section class="large"> 
-    <div class="contents">
-      <div class="test">
-        <h1 class="font">Experience <span class="blink">|</span></h1>
-        <div class="tab">
-          <button class="tablinks" onclick="openCity(event, 'SpartaHack 8')">SpartaHack 8</button>
-          <button class="tablinks" onclick="openCity(event, 'CSV Projects')">CSV Projects</button>
-          <button class="tablinks" onclick="openCity(event, 'Legends of Time')">Legends of Time</button>
-          <button class="tablinks" onclick="openCity(event, 'Swappa')">Swappa</button>
-          <button class="tablinks" onclick="openCity(event, 'Water Filtration Design')">Water Filtration Design</button>
-        </div>
-        
-        <div id="SpartaHack 8" class="tabcontent">
-          <h3 class="font1">SpartaHack 8</h3>
-          <ul class="font2">
-            <li>Leveraging expertise in JavaScript, Firebase, and Google authentication, seamlessly integrated the backend with 
-              our Solutions platform website.</li>
-            <li>This integration enabled us to securely store users' inputs and display them on the front end, providing an 
-              enhanced user experience and facilitating streamlined data management.</li>
-          </ul>
-        </div>
-        
-        <div id="CSV Projects" class="tabcontent">
-          <h3 class="font1">CSV Projects</h3>
-          <ul class="font2">
-            <li>Developed several data analysis tools, such as a stock market analyzer, network analyzer, movie ratings 
-              analyzer, and the card game of Klondike.</li>
-            <li>Possessed expertise in working with csv files in python to analyze data using various data structures, including 
-              lists, tuples, dictionaries, and sets, demonstrating my ability to extract valuable insights from data and drive 
-              informed decision-making.</li>
-            <li>Learnt data manipulation techniques to solve real-world problems that occur in engineering, mathematics, and 
-              science.
-            </li>
-          </ul>
-        </div>
-        
-        <div id="Legends of Time" class="tabcontent">
-          <h3 class="font1">Website Design</h3>
-          <ul class="font2">
-            <li>Created a visually stunning and user-friendly website for Legends of Time, a local small business in Downtown 
-              Rochester.</li>
-            <li>Leveraging expertise in HTML, CSS, and JavaScript, designed the website from scratch to embody the unique 
-              Native-American atmosphere of the business.</li>
-            <li>Ensured optimal user experience by making the website responsive across different device formats and added 
-              interactive features, such as contact buttons, to enhance customer engagement.
-            </li>
-          </ul>
-        </div>
-
-        <div id="Swappa" class="tabcontent">
-          <h3 class="font1">Swappa Fee Calculator</h3>
-          <ul class="font2">
-            <li>Developed a user-friendly and intuitive interface for Swappa.com, utilizing HTML and CSS.
-            </li>
-            <li>The interface allows users to input an asking price for their potential device sale, which then calculates the 
-              listing price, buyer and seller fees, PayPal deduction, and overall profit from the sale.</li>
-          </ul>
-        </div>
-
-        <div id="Water Filtration Design" class="tabcontent">
-          <h3 class="font1">Water Filtration Design</h3>
-          <ul class="font2">
-            <li>Collaborated with a team of 4 to evaluate the efficacy of various activated carbon types for integration into a 
-              water filtration system.
-              </li>
-            <li>Applied Excel to perform in-depth efficiency calculations based on the unique properties of each activated 
-              carbon type, which were then used to create informative comparison graphs. Conducted research to explore 
-              potential alternatives to activated carbon with the goal of enhancing system efficiency.
-              </li>
-            <li>Concluded Zeolite 13X was a better alternative, boasting a higher density, enabling greater packing efficiency 
-              within the filter. Additionally, its cost-effective, at only 27% the cost per pound of activated carbon.
-              
-            </li>
-          </ul>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-  <section class="large"> 
-    <div class="contents">
-      <div class="test">
-        <h1 class="font">Skills <span class="blink">|</span></h1>
-              <h3 class="font1"><ul>
-                <li>Python  -  <i class="fa-brands fa-python" style="font-size:20px; color:#101010"></i></li>
-                <li>C++ - <i class="fa-solid fa-c" style="font-size:20px; color:#101010"></i></li>
-                <li>HTML - <i class="fa-brands fa-html5" style="font-size:20px; color:#101010"></i></li>
-                <li>CSS - <i class="fa-brands fa-css3-alt" style="font-size:20px; color:#101010"></i></li>
-                <li>Java - <i class="fa-brands fa-java" style="font-size:20px; color:#101010"></i></li>
-                <li>Excel - <i class="fa-regular fa-file-excel" style="font-size:20px; color:#101010"></i></li>
-                <li>Word - <i class="fa-regular fa-file-word" style="font-size:20px; color:#101010"></i></li>
-                <li>Jupyter Notebooks - <i class="fa-solid fa-book" style="font-size:20px; color:#101010"></i></li>
-              </ul></h3>
-      </div>
-    </div>
-  </section>
-
-  <section class="large">
-    <div class="contents">
-        <div class="test">
-          <h1 class="font">Contact <span class="blink">|</span></h1>
-          <h3 class="font1"><ul>
-            <li>Mail  -  <i style="font-size:20px; color:#101010" class="fa"><a href="mailto: revanka4@msu.edu" style="color:#101010; text-decoration: none">&#xf0e0;</a></i></li>
-            <li>Linkedin - <i style="font-size:20px; color:#101010" class="fa-brands"><a
-              style = "color:#101010; text-decoration: none"
-              href="https://www.linkedin.com/in/vivekrevankar/"
-              target="_blank"
-              >&#xf08c;</a></i></li>
-            <li>Github - <i style="font-size:20px; color:#101010" class="fa-brands"><a
-              style = "color:#101010; text-decoration: none"
-              href="https://github.com/viv3ko"
-              target="_blank"
-              >&#xf09b;</a></i></li>
-            <li>Instagram - <i style="font-size:20px; color:#101010" class="fa-brands"><a
-              style = "color:#101010; text-decoration: none"
-              href="https://www.instagram.com/viv3k.o/"
-              target="_blank"
-              >&#xf16d;</a></i></li></li>
-          </ul></h3>
-          <h1 class="font">Resume <span class="blink">|</span></h1>
-          <h3 class="font1"><ul>
-            <li>Resume  -  <i style="font-size:20px; color:#101010" class="fa">
-              <a
-              style = "color:#101010; text-decoration: none"
-              href="https://drive.google.com/file/d/1GMUvBkwltxXaPSxhPPZcNsnjbargbq8z/view?usp=sharing"
-              target="_blank"
-              >&#xf1c1;</a></i></li>
-          </ul></h3>
-        </div>
-      </div>
-  </section>
-</article>
-
-
-
-<script>
-  function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
-  </script>
+</body>
 
 </html>
