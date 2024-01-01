@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" href="/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Vivek</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+
+<style>
+html, body {
+  padding: 0;
+  margin: 0;
+  --extra-space: 60px;
+}
+  
+article {
+  overflow: scroll;
+
+  scroll-snap-type: y mandatory;
+  /* Reserve space for header and additional space so above page are visible a bit*/ 
+  scroll-padding-top:  calc(var(--bar-height) + var(--extra-space));
+
+  position: absolute;
+
+  top:0;
+  bottom:0;
+  left: 0;
+  right: 0;
+  padding: var(--bar-height) 0 0 0;
+  
+  /* Enable Safari touch scrolling physics which is needed for scroll snap */
+  -webkit-overflow-scrolling: touch; 
+}
+
+section {
+  scroll-snap-align: start; /* snap align start */
+  scroll-snap-stop: always;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  
+  font-size: 36px;
+}
+
+section.large {
+   height: 100vh;
+}
+section.medium {
+   height: 60vh;
+}
+section.small {
+   height: 30vh;
+}
+
+article > section:nth-of-type(1) {
+  background-color: rgb(181, 198, 194);
+}
+article > section:nth-of-type(2) {
+  background-color: rgb(181, 198, 194);
+}
+article >  section:nth-of-type(3) {
+  background-color: rgb(181, 198, 194);
+}
+article >  section:nth-of-type(4) {
+  background-color: rgb(181, 198, 194);
+}
+article > section:nth-of-type(5) {
+  background-color: rgb(181, 198, 194);
+}
+  
+  
+header {
+  position: fixed;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  
+  height: var(--bar-height);
+  width: 100%;
+  top: 0;
+  padding: 0;
+
+  background: rgb(181, 198, 194);
+  color: #212121;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+  
+
+  
+body {
+  background: rgb(181, 198, 194);
+  font-family: "Inconsolata", monospace; 
+}
+
+.contents {
+  max-width: 1000px;
+  margin: auto;
+  background: rgb(181, 198, 194);
+  padding: 10px;
+}
+
+
+.font {
+  color: #101010;
+  font-family: "Inconsolata", monospace; 
+  font-size: 36px;
+}
+  
+.font1 {
+  color: #101010;
+  font-family: "Inconsolata", monospace; 
+  font-size: 22px;
+}
+
+.font2 {
+  color: #101010;
+  font-family: "Inconsolata", monospace; 
+  font-size: 17px;
+}
+
+.font3 {
+  color: #101010;
+  font-family: "Inconsolata", monospace; 
+  font-size: 20px;
+}
+
+
+.blink {
+        animation: blinker 1s linear infinite;
+        color: #101010;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: "Inconsolata", monospace; 
+      }
+      @keyframes blinker {
+        50% {
+          opacity: 0;
+        }
+      }
+    
+.row{clear:both}
+
+.column{
+    width: 500px;
+    float: left;
+}
+
+.tab {
+  overflow: hidden;
+  background-color: rgb(181, 198, 194);
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  padding-right: 14px 16px;
+  margin-right: 40px;
+  transition: 0.3s;
+  font-size: 19px;
+  color: #101010;
+  font-family: "Inconsolata", monospace; 
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  border-top: none;
+  background-color: rgb(181, 198, 194);
+}
+</style>
+
+<script src="https://kit.fontawesome.com/b6cb1903b6.js" crossorigin="anonymous"></script>
+
+<article>
+
+  <section class="large"> 
+    <div class="contents">
+      <div class="test">
+        <h1 class="font">Hi, Vivek here <span class="blink">|</span></i></h1>
+        <h3 class="font1">I am honors student majoring in Computer Science and minoring in Data Science. I have experience in Python Programming especially with data manipulation and working with CSV files. I am eager to apply my skills to a career in data analysis and data science. I am currently seeking a challenging role in a fast-paced environment to continue growth and make an impact.</h3>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="large">
+    <div class="contents">
+      <div class="test">
+        <h1 class="font">Education <span class="blink">|</span></h1>
+        <h3 class="font1">Michigan State University | E. Lansing | MI<ul>
+  <li class="font3">Bachelor of Science in Computer Science</li>
+  <li class="font3">Minor in Data Science</li>
+  <li class="font3">GPA: 3.69</li>
+  <li class="font3">Expected Graduation: May, 2025</li>
+</ul>
+</h3>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="large"> 
+    <div class="contents">
+      <div class="test">
+        <h1 class="font">Experience <span class="blink">|</span></h1>
+        <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'SpartaHack 8')">SpartaHack 8</button>
+          <button class="tablinks" onclick="openCity(event, 'CSV Projects')">CSV Projects</button>
+          <button class="tablinks" onclick="openCity(event, 'Legends of Time')">Legends of Time</button>
+          <button class="tablinks" onclick="openCity(event, 'Swappa')">Swappa</button>
+          <button class="tablinks" onclick="openCity(event, 'Water Filtration Design')">Water Filtration Design</button>
+        </div>
+        
+        <div id="SpartaHack 8" class="tabcontent">
+          <h3 class="font1">SpartaHack 8</h3>
+          <ul class="font2">
+            <li>Leveraging expertise in JavaScript, Firebase, and Google authentication, seamlessly integrated the backend with 
+              our Solutions platform website.</li>
+            <li>This integration enabled us to securely store users' inputs and display them on the front end, providing an 
+              enhanced user experience and facilitating streamlined data management.</li>
+          </ul>
+        </div>
+        
+        <div id="CSV Projects" class="tabcontent">
+          <h3 class="font1">CSV Projects</h3>
+          <ul class="font2">
+            <li>Developed several data analysis tools, such as a stock market analyzer, network analyzer, movie ratings 
+              analyzer, and the card game of Klondike.</li>
+            <li>Possessed expertise in working with csv files in python to analyze data using various data structures, including 
+              lists, tuples, dictionaries, and sets, demonstrating my ability to extract valuable insights from data and drive 
+              informed decision-making.</li>
+            <li>Learnt data manipulation techniques to solve real-world problems that occur in engineering, mathematics, and 
+              science.
+            </li>
+          </ul>
+        </div>
+        
+        <div id="Legends of Time" class="tabcontent">
+          <h3 class="font1">Website Design</h3>
+          <ul class="font2">
+            <li>Created a visually stunning and user-friendly website for Legends of Time, a local small business in Downtown 
+              Rochester.</li>
+            <li>Leveraging expertise in HTML, CSS, and JavaScript, designed the website from scratch to embody the unique 
+              Native-American atmosphere of the business.</li>
+            <li>Ensured optimal user experience by making the website responsive across different device formats and added 
+              interactive features, such as contact buttons, to enhance customer engagement.
+            </li>
+          </ul>
+        </div>
+
+        <div id="Swappa" class="tabcontent">
+          <h3 class="font1">Swappa Fee Calculator</h3>
+          <ul class="font2">
+            <li>Developed a user-friendly and intuitive interface for Swappa.com, utilizing HTML and CSS.
+            </li>
+            <li>The interface allows users to input an asking price for their potential device sale, which then calculates the 
+              listing price, buyer and seller fees, PayPal deduction, and overall profit from the sale.</li>
+          </ul>
+        </div>
+
+        <div id="Water Filtration Design" class="tabcontent">
+          <h3 class="font1">Water Filtration Design</h3>
+          <ul class="font2">
+            <li>Collaborated with a team of 4 to evaluate the efficacy of various activated carbon types for integration into a 
+              water filtration system.
+              </li>
+            <li>Applied Excel to perform in-depth efficiency calculations based on the unique properties of each activated 
+              carbon type, which were then used to create informative comparison graphs. Conducted research to explore 
+              potential alternatives to activated carbon with the goal of enhancing system efficiency.
+              </li>
+            <li>Concluded Zeolite 13X was a better alternative, boasting a higher density, enabling greater packing efficiency 
+              within the filter. Additionally, its cost-effective, at only 27% the cost per pound of activated carbon.
+              
+            </li>
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="large"> 
+    <div class="contents">
+      <div class="test">
+        <h1 class="font">Skills <span class="blink">|</span></h1>
+              <h3 class="font1"><ul>
+                <li>Python  -  <i class="fa-brands fa-python" style="font-size:20px; color:#101010"></i></li>
+                <li>C++ - <i class="fa-solid fa-c" style="font-size:20px; color:#101010"></i></li>
+                <li>HTML - <i class="fa-brands fa-html5" style="font-size:20px; color:#101010"></i></li>
+                <li>CSS - <i class="fa-brands fa-css3-alt" style="font-size:20px; color:#101010"></i></li>
+                <li>Java - <i class="fa-brands fa-java" style="font-size:20px; color:#101010"></i></li>
+                <li>Excel - <i class="fa-regular fa-file-excel" style="font-size:20px; color:#101010"></i></li>
+                <li>Word - <i class="fa-regular fa-file-word" style="font-size:20px; color:#101010"></i></li>
+                <li>Jupyter Notebooks - <i class="fa-solid fa-book" style="font-size:20px; color:#101010"></i></li>
+              </ul></h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="large">
+    <div class="contents">
+        <div class="test">
+          <h1 class="font">Contact <span class="blink">|</span></h1>
+          <h3 class="font1"><ul>
+            <li>Mail  -  <i style="font-size:20px; color:#101010" class="fa"><a href="mailto: revanka4@msu.edu" style="color:#101010; text-decoration: none">&#xf0e0;</a></i></li>
+            <li>Linkedin - <i style="font-size:20px; color:#101010" class="fa-brands"><a
+              style = "color:#101010; text-decoration: none"
+              href="https://www.linkedin.com/in/vivekrevankar/"
+              target="_blank"
+              >&#xf08c;</a></i></li>
+            <li>Github - <i style="font-size:20px; color:#101010" class="fa-brands"><a
+              style = "color:#101010; text-decoration: none"
+              href="https://github.com/viv3ko"
+              target="_blank"
+              >&#xf09b;</a></i></li>
+            <li>Instagram - <i style="font-size:20px; color:#101010" class="fa-brands"><a
+              style = "color:#101010; text-decoration: none"
+              href="https://www.instagram.com/viv3k.o/"
+              target="_blank"
+              >&#xf16d;</a></i></li></li>
+          </ul></h3>
+          <h1 class="font">Resume <span class="blink">|</span></h1>
+          <h3 class="font1"><ul>
+            <li>Resume  -  <i style="font-size:20px; color:#101010" class="fa">
+              <a
+              style = "color:#101010; text-decoration: none"
+              href="https://drive.google.com/file/d/1GMUvBkwltxXaPSxhPPZcNsnjbargbq8z/view?usp=sharing"
+              target="_blank"
+              >&#xf1c1;</a></i></li>
+          </ul></h3>
+        </div>
+      </div>
+  </section>
+</article>
+
+
+
+<script>
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  </script>
+
+</html>
